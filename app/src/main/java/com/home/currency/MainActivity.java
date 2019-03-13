@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
     {
         if (ed_ntd.getText().toString().length()==0)
         {
-            showAlert("Problem","Please enter your NTD amount");
+            showAlert(getString(R.string.problem),getString(R.string.pleace_enter_your_ntd));
         }else
         {
             String ntdString = ed_ntd.getText().toString();
             float ntd = Float.parseFloat(ntdString);
             float us = (float) (ntd/ 30.9);
-            showAlert("Result","USD is "+us);
+            showAlert(getString(R.string.result),getString(R.string.usd_is)+us);
         }
 
     }
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton("OK",null)
+                .setPositiveButton(R.string.ok,null)
                 .show()
         ;
     }
